@@ -2496,9 +2496,10 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage bacon
+.PHONY: otapackage bacon sokp
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
+sokp: otapackage
 
 endif    # build_ota_package
 
